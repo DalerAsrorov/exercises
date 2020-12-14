@@ -9,7 +9,7 @@
   "author": "Moshe Kolodny",
   "license": "MIT",
   "devDependencies": {
-    "mocha": "^2.2.4",
+    "mocha": "^8.2.1",
     "sinon": "^1.15.3"
   }
 }
