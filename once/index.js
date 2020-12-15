@@ -1,22 +1,17 @@
 
 function once(cb) {
-    this.hasBeenCalled = false;
-    this.result = null;
+    let result = null;
+    let hasBeenCalled = false;
 
-    const called = (cb, ...args) => {
-        if (!this.hasBeenCalled) {
-            this.hasBeenCalled = true;
-
-            this.result = cb.call(this.result, ...args);
-            return this.result;
-        } else if (this.hasBeenCalled && this.result) {
-            return this.result;
-        } else {
-            return cb;
+    return function () {
+        if (!hasBeenCalled) {
+            hasBeenCalled = true;
+            result = cb.apply(this, arguments);
+            return result;
         }
-    };
 
-    return called.bind(null, cb);
+        return result;
+    };
 }
 
 module.exports = once;
