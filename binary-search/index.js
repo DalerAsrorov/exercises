@@ -3,9 +3,10 @@ function binarySearch(arr, target) {
     const n = arr.length;
     let lo = 0;
     let hi = n - 1;
+    let mid;
 
     while (lo <= hi) {
-        let mid = Math.floor(lo + ((hi - lo) / 2));
+        mid = (lo + Math.floor((hi - lo) / 2));
 
         if (arr[mid] === target) {
             return mid;
