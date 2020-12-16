@@ -9,7 +9,6 @@ function throttle(fn, ms) {
             lastCalled = new Date();
             return fn.apply(this, arguments);
         } else {
-
             ctx = this;
             args = [...arguments];
 
