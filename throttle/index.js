@@ -5,7 +5,6 @@ function throttle(fn, ms) {
     let args;
 
     return function () {
-
         if (!lastCalled || (new Date() - lastCalled > ms && !timeout)) {
             lastCalled = new Date();
             return fn.apply(this, arguments);
